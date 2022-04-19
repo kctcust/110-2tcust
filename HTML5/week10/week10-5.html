@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/panzoom.css">
+    <style>
+        #myPanzoom {
+        width: 600px;
+        height: 400px;
+        background-color: #eee;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="myPanzoom" class="panzoom">
+        <div class="panzoom__viewport">
+          <img
+            class="panzoom__content"
+            src="https://blog.tcust.edu.tw/uploads/20220417/f6c4c5bd-94f7-6b6d-2da7-25f8867681e7.jpeg"
+            alt=""
+          />
+        </div>
+        <p>Simple caption</p>
+      </div>
+        <p>Simple caption</p>
+      </div>
+<script>
+    const myPanzoom = new Panzoom(document.querySelector("#myPanzoom"), {
+    // Your options go here
+    });
+</script>
+</body>
+
+</html>
