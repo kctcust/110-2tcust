@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+    <style>
+        #myCarousel {
+        color: #32325d;
+
+        --carousel-button-bg: #fff;
+        --carousel-button-shadow: 0 2px 1px -1px rgb(0 0 0 / 20%),
+            0 1px 1px 0 rgb(0 0 0 / 14%), 0 1px 3px 0 rgb(0 0 0 / 12%);
+
+        --carousel-button-svg-width: 20px;
+        --carousel-button-svg-height: 20px;
+
+        --carousel-button-svg-stroke-width: 2.5;
+        }
+
+        #myCarousel img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container pt-1">
+        <h1 class="mt-12 mb-8 px-6 text-center text-lg md:text-2xl font-semibold">
+        Lazy Loading Images
+        </h1>        
+        <div id="myCarousel" class="carousel mb-12 max-w-4xl mx-auto">
+        <div class="carousel__viewport">
+            <div class="carousel__slide">
+            <img src="https://source.unsplash.com/UTVfyq6ZlBU/480x270" />
+            </div>
+            <div class="carousel__slide">
+            <img src="https://source.unsplash.com/NodtnCsLdTE/480x270" />
+            </div>
+            <div class="carousel__slide">
+            <img src="https://source.unsplash.com/oYfE7h9UBbk/480x270" />
+            </div>
+            <div class="carousel__slide">
+            <img src="https://source.unsplash.com/9sJcLFELrwk/480x270" />
+            </div>
+        </div>
+        <div class="text-right text-xl p-4">
+            <span class="carousel_index">1</span>&nbsp;|&nbsp;<span
+            class="carousel_count"
+            >1</span>
+        </div>
+        </div>          
+    </div>
+<script>
+// Initialise Carousel
+    const myCarousel = new Carousel(document.querySelector("#myCarousel"), {
+    Dots: false,
+    on: {
+        init: (carousel) => {
+        carousel.$index = carousel.$container.querySelector(".carousel_index");
+        carousel.$count = carousel.$container.querySelector(".carousel_count");
+        },
+        refresh: (carousel) => {
+        if (carousel.$count) {
+            carousel.$count.innerHTML = carousel.pages.length;
+        }
+        },
+        change: (carousel) => {
+        if (carousel.$index) {
+            carousel.$index.innerHTML = carousel.page + 1;
+        }
+        },
+    },
+    });
+</script>
+</body>
+
+</html>
