@@ -13,7 +13,7 @@
     <?php
     include 'createDBa.php';
     include 'createTablea.php';
-    include 'createRecorda.php';
+    include 'createRecordb.php';
     ?>
 </body>
 
