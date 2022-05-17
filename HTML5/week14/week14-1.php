@@ -8,5 +8,6 @@
 </head>
 <body>
 <?php include "nav1.html" ?>
+<h1>This is Homepage....</h1>
 </body>
 </html>
