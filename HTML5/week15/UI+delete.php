@@ -21,7 +21,7 @@
 <body>
     <?php include "nav1.html" ?>
     <div class="container">
-        <form action="update.php" method="GET">
+        <form action="delete.php" method="GET">
             <p>id: <input type="text" name="id"></p>
             <input type="submit" value="刪除資料" class="btn btn-primary">
             <button type="reset" value="Reset" class="btn btn-info">Reset</button>
