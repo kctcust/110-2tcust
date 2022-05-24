@@ -34,7 +34,7 @@
     mysqli_query($conn, "set names utf8");
 
     // $sql = "INSERT INTO $tbname (myname, myemail, myaddress) VALUES ('$myname', '$myemail', '$myaddress')";
-    $sql = "UPDATE $tbname SET myname='$myname' WHERE id=$id";
+    $sql = "UPDATE $tbname SET myname='$myname', myemail='$myemail', myaddress='$myaddress' WHERE id=$id";
     if ($conn->query($sql) === TRUE) {
         echo "New record created successfully<br>";
     } else {
