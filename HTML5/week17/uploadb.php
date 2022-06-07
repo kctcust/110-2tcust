@@ -30,7 +30,7 @@
         // if (($_FILES["file"]["type"] == "image/gif")) {
         //     echo "OK";
         if ($imageFileType == "jpg" || $imageFileType == "png" || $imageFileType == "jpeg"
-        || $imageFileType == "gif" ) {
+        || $imageFileType == "gif" && ($_FILES["fileToUpload"]["size"] < 300000)) {
             // echo "OK";
             if ($_FILES["fileToUpload"]["error"] > 0) {
                 echo "Return Code: " . $_FILES["fileToUpload"]["error"] . "<br />";
@@ -46,7 +46,7 @@
                 }
             }
         } else {
-            echo "Fail, wrong type, not image！"; //上傳失敗後顯示錯誤資訊
+            echo "Fail, wrong type, not image！ or file size too big!"; //上傳失敗後顯示錯誤資訊
         }
 
 
